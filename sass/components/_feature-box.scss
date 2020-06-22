@@ -1,0 +1,48 @@
+.feature-box{
+    padding: 2.5rem;
+    background-color: rgba($color-white,0.8);
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black,.15);
+    text-align: center;
+    font-size: 1.5rem;
+    transition:transform 0.4s;
+    backface-visibility: hidden;
+    
+    
+    :not(:last-child){
+        margin-bottom: 0;
+    }
+    @include respond(tab-big){
+        //padding: 2rem;
+        margin-bottom: 3rem;
+       
+    }
+    @include respond(tab-normal){
+        padding: 2rem;
+        margin-bottom: 3rem;
+       
+    }
+    @include respond(phone){
+        padding: 1.6rem;
+        margin-bottom: 2.5rem;
+       
+    }
+    &__icon{
+        font-size: 6rem;
+        background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark);
+        display: inline-block;
+        -webkit-background-clip: text;
+        color:transparent;
+        margin-bottom: .5rem;
+
+        @include respond(phone){
+            font-size: 4rem;
+        }
+    }
+    &__text{
+        
+    }
+    &:hover{
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+}

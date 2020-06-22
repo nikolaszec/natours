@@ -1,0 +1,89 @@
+.composition{
+    position: relative;
+    backface-visibility: hidden;
+    height: 20rem;
+    @include respond(tab-big){
+        z-index: 9999; 
+        overflow: hidden;
+        margin-top: 4rem;
+    }
+    &__photo{
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        position: absolute;
+        transition: all .2s;
+        // &:not(:hover){
+        //     transform: scale(0.8);
+        // }
+        @include respond(tab-big){
+            float: left;
+           //position: relative;
+            width: 33.333333%;
+            margin: .3rem;
+        }
+        @include respond(tab-normal){
+            position: relative;
+            width: 33.333333%;
+            margin: .3rem;
+        }
+        
+        &--p1{
+            top:-2rem;
+            left:0;
+            @include respond(tab-big){
+                top:0;
+                left:0;
+            }
+            @include respond(tab-normal){
+                top:0;
+                left: 0;
+            }
+        }
+        &--p2{
+            top:.4rem;
+            right:-2rem;
+            @include respond(tab-big){
+                top:0;
+                left: 17rem;
+                z-index: 200;
+                transform: scale(1.1);
+            }
+            @include respond(tab-normal){
+                top:0rem;
+                left: 1rem;
+                z-index: 200;
+                transform: scale(1.1);
+            }
+        }
+        &--p3{
+            top:13rem;
+            left:20%;
+            @include respond(tab-big){
+                top:0;
+                left:36rem;
+            }
+            @include respond(tab-normal){
+                top:-14rem;
+                left: 18rem;
+                
+            }
+            @include respond(phone){
+                top:-12rem;
+                left: 15rem;
+                
+            }
+        }
+        &:hover{
+            outline:1.5rem solid $color-primary;
+            outline-offset: 1.5rem;
+           // margin: 1rem;
+
+            z-index: 29;
+            transform: scale(1.05) translateY(.5rem);
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+        }
+    }
+    &:hover &__photo:not(:hover){
+            transform: scale(.95);
+        }
+}
